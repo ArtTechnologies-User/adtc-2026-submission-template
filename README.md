@@ -42,42 +42,43 @@ Fill in every field. No field should remain at its placeholder value.
 
 ```json
 {
-  "team_id": "your-team-id",
+  "team_id": "offline-waec-tutor-team",
   "domain": "coding_assistants",
   "language_scope": ["en"],
   "african_alpha_claim": false,
   "budget_laptop_claim": true,
   "submitter": {
-    "name": "your-name",
-    "email": "your-email@domain.com",
-    "github_handle": "your-github"
+    "name": "Taiwo Anthony Alabi",
+    "email": "alabitaiwoanthony@gmail.com",
+    "github_handle": "taiwo-waec-tutor"
   },
   "cross_disciplinary_pairing": {
     "discipline": "education",
     "load_bearing": true,
-    "description": "Brief description of how your model serves a real-world domain."
+    "description": "This model supports West African students preparing for WAEC exams by providing offline AI tutoring, quizzes, and explanations in core subjects."
   },
   "test_prompts": [
     {
       "prompt_id": "tp_001",
-      "prompt": "Your first test prompt, written for your chosen domain."
+      "prompt": "Solve the quadratic equation: x^2 - 5x + 6 = 0"
     },
     {
       "prompt_id": "tp_002",
-      "prompt": "Your second test prompt, written for your chosen domain."
+      "prompt": "Explain the concept of Ecology in Biology."
     }
   ],
   "model": {
-    "name": "YourModel-Q4_K_M",
+    "name": "WAEC-Tutor-Q4_K_M",
     "runtime": "llama.cpp",
     "quantization": "GGUF Q4_K_M",
     "parameters_estimate": "1.1B",
     "packaging": "binary_bundle"
   },
   "_runtime": {
-    "model_path": "model/your-model.gguf"
+    "model_path": "model/waec-tutor-q4_k_m.gguf"
   }
 }
+
 ```
 
 ### Field Reference
