@@ -121,8 +121,8 @@ echo "Download complete! Model saved to model/waec-tutor-q4_k_m.gguf"
 
 ## Run WAEC Tutor
 To start the GUI:
-```bash
-python waec_tutor_gui.py
+    ```bash
+    python waec_tutor_gui.py
 
 ---
 
@@ -166,7 +166,8 @@ WAEC Tutor addresses the challenge of exam preparation for West African students
     Data: Limited storage and RAM shaped the choice of quantization and model size.
     
     Accessibility: Must remain affordable and usable in low‑resource school environments.
-4. **Benchmarks** — What inference speed and memory numbers did you observe on your development machine?
+   
+5. **Benchmarks** — What inference speed and memory numbers did you observe on your development machine?
     On a test machine (Intel Core i5‑1135G7, 8 GB RAM, Ubuntu 22.04):
     
     Model load time: ~15 seconds.
