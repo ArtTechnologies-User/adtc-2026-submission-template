@@ -42,7 +42,7 @@ Fill in every field. No field should remain at its placeholder value.
 
 ```json
 {
-  "team_id": "offline-waec-tutor-team",
+  "team_id": "offline-ai-waec-tutor-team",
   "domain": "coding_assistants",
   "language_scope": ["en"],
   "african_alpha_claim": false,
@@ -106,7 +106,20 @@ Fill in every field. No field should remain at its placeholder value.
 
 ## 📥 download_model.sh
 
-This script **must** download your model weight file to the `model/` directory.
+This script **must** download your model weight file to the `model/waec-tutor-q4_k_m.gguf` directory.
+
+#!/bin/bash
+# Script to download WAEC Tutor model weights
+# Destination: model/waec-tutor-q4_k_m.gguf
+
+mkdir -p model
+
+echo "Downloading WAEC Tutor model from Google Drive..."
+wget --no-check-certificate -O model/waec-tutor-q4_k_m.gguf "https://drive.google.com/uc?export=download&id=1z_fezUOecgyl3K1CdmbdOorb4gu-xt-h"
+
+echo "Download complete! Model saved to model/waec-tutor-q4_k_m.gguf"
+
+
 
 Rules:
 - Must be idempotent — safe to run multiple times without re-downloading.
