@@ -121,8 +121,8 @@ echo "Download complete! Model saved to model/waec-tutor-q4_k_m.gguf"
 
 ## Run WAEC Tutor
 To start the GUI:
-    ```bash
-    python waec_tutor_gui.py
+  ```bash
+  python waec_tutor_gui.py
 
 ---
 
