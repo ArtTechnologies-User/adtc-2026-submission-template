@@ -123,8 +123,8 @@ echo "Download complete! Model saved to model/waec-tutor-q4_k_m.gguf"
 To start the GUI:
   ```bash
   python waec_tutor_gui.py
+  ```
 
----
 
 Rules:
 - Must be idempotent — safe to run multiple times without re-downloading.
@@ -196,6 +196,7 @@ Then run a local smoke test before submitting:
 ```bash
 # 1. Download your weights
 bash download_model.sh
+```
 
 # 2. Run the profiler in participant mode
 adtc-profiler run \
@@ -214,6 +215,7 @@ The profiler source code, including the thermal monitoring logic and scoring for
 [github.com/Africa-Deep-Tech-Foundation/adtc-profiler](https://github.com/Africa-Deep-Tech-Foundation/adtc-profiler)
 
 ---
+```
 
 ## ⚠️ Rules
 
