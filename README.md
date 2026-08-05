@@ -142,6 +142,8 @@ To start the GUI:
   ```bash
   cd C:\Users\USER\waec_tutor
   python waec_tutor_gui.py
+ or py waec_tutor_gui.py
+
   ```
 
 
