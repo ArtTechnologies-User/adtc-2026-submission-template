@@ -28,9 +28,7 @@ Running the model offline, directly on budget laptops matters because it removes
 
 <!-- What model did you start from? Why that base model and quantization? What alternatives did you consider and reject? -->
 
-When I started building WAEC Tutor, my first challenge was choosing a model that could actually run on the kinds of laptops students in West Africa already use. I experimented with bigger models like Mistral 7B and Phi‑3 Mini, but they quickly showed their limits — they were powerful, yes, but far too heavy for budget hardware. The experience was slow, sometimes unusable, and I knew that wouldn’t work for students who need quick, reliable answers.
-
-That’s why I settled on a smaller LLaMA‑based model with about 1.1B parameters. It gave me enough reasoning ability to explain concepts clearly, but it was light enough to run locally without draining resources.
+When I started building WAEC Tutor, my first challenge was choosing a model that could actually run on the kinds of laptops students in West Africa already use.
 
 Base model: A compact LLaMA‑based model (~1.1B parameters). I tested larger options like Mistral 7B and Phi‑3 Mini, but they were too heavy for the laptops most West African students use. The smaller LLaMA variant gave me enough reasoning ability to explain concepts clearly while staying lightweight enough to run locally.
 
