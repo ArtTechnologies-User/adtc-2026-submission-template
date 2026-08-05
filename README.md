@@ -120,8 +120,27 @@ wget --no-check-certificate -O model/waec-tutor-q4_k_m.gguf "https://drive.googl
 echo "Download complete! Model saved to model/waec-tutor-q4_k_m.gguf"
 
 ## Run WAEC Tutor
+Correct Way to Test Your Script
+1.	Open Command Prompt
+	  Press Win + R, type cmd, and hit Enter.
+
+2.	Navigate into your project folder
+```bash
+cd C:\Users\USER\waec_tutor
+This changes directory into your WAEC Tutor folder.
+```
+
+3.	Run your Python script
+```bash
+python waec_tutor_gui.py
+or, if python doesn’t work:
+py waec_tutor_gui.py
+```
+
+
 To start the GUI:
   ```bash
+  cd C:\Users\USER\waec_tutor
   python waec_tutor_gui.py
   ```
 
