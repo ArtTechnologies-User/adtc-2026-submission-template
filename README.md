@@ -115,7 +115,7 @@ This script **must** download your model weight file to the `model/waec-tutor-q4
 mkdir -p model
 
 echo "Downloading WAEC Tutor model from Google Drive..."
-wget --no-check-certificate -O model/waec-tutor-q4_k_m.gguf "https://drive.google.com/uc?export=download&id=1z_fezUOecgyl3K1CdmbdOorb4gu-xt-h"
+wget --no-check-certificate -O model/waec-tutor-q4_k_m.gguf "https://drive.google.com/file/d/1nN5lDd7BNarbkofKwAiYX8FLleGQV03J/view?usp=sharing"
 
 echo "Download complete! Model saved to model/waec-tutor-q4_k_m.gguf"
 
