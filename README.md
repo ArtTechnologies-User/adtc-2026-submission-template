@@ -205,8 +205,8 @@ pip install "git+https://github.com/Africa-Deep-Tech-Foundation/adtc-profiler.gi
 Then run a local smoke test before submitting:
 
 ```bash
-
-
+bash download_model.sh
+./download_model.sh
 ```
 
 # 2. Run the profiler in participant mode
