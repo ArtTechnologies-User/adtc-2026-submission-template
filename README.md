@@ -55,7 +55,7 @@ Fill in every field. No field should remain at its placeholder value.
   "cross_disciplinary_pairing": {
     "discipline": "education",
     "load_bearing": true,
-    "description": "This model supports West African students preparing for WAEC exams by providing offline AI tutoring, quizzes, and explanations in core subjects."
+    "description": "This model supports West African students preparing for WAEC exams by providing offline AI tutoring, quizzes, and explanations in Mathematics, Biology, English, and other core subjects."
   },
   "test_prompts": [
     {
@@ -65,17 +65,22 @@ Fill in every field. No field should remain at its placeholder value.
     {
       "prompt_id": "tp_002",
       "prompt": "Explain the concept of Ecology in Biology."
+    },
+    {
+      "prompt_id": "tp_003",
+      "prompt": "Write an essay on the causes of the transatlantic slave trade."
     }
   ],
   "model": {
     "name": "WAEC-Tutor-Q4_K_M",
     "runtime": "llama.cpp",
     "quantization": "GGUF Q4_K_M",
-    "parameters_estimate": "1.1B",
+    "parameters_estimate": "3B",
     "packaging": "binary_bundle"
   },
   "_runtime": {
-    "model_path": "model/waec-tutor-q4_k_m.gguf"
+    "model_path": "models/Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+    "executable_link": "https://drive.google.com/file/d/1hb_KOu9tR6RN4Eu3EEHbocDAwb9cuJJA/view?usp=sharing"
   }
 }
 
@@ -104,48 +109,45 @@ Fill in every field. No field should remain at its placeholder value.
 
 ---
 
-## 📥 download_model.sh
 
-This script **must** download your model weight file to the `model/waec-tutor-q4_k_m.gguf` directory.
+## 📥 Model Weights
+The WAEC Tutor model is included in this repository via Git LFS.
 
-#!/bin/bash
-# Script to download WAEC Tutor model weights
-# Destination: model/waec-tutor-q4_k_m.gguf
+- Path: `models/Llama-3.2-3B-Instruct-Q4_K_M.gguf`
+- Format: GGUF Q4_K_M quantization
+- Runtime: llama.cpp
 
-mkdir -p model
-
-echo "Downloading WAEC Tutor model from Google Drive..."
-wget --no-check-certificate -O model/waec-tutor-q4_k_m.gguf "https://drive.google.com/file/d/1nN5lDd7BNarbkofKwAiYX8FLleGQV03J/view?usp=sharing"
-
-echo "Download complete! Model saved to model/waec-tutor-q4_k_m.gguf"
-
-## Run WAEC Tutor
-Correct Way to Test Your Script
-1.	Open Command Prompt
-	  Press Win + R, type cmd, and hit Enter.
-
-2.	Navigate into your project folder
+Ensure you have Git LFS installed before cloning:
 ```bash
-cd C:\Users\USER\waec_tutor
-This changes directory into your WAEC Tutor folder.
+git lfs install
+git clone https://github.com/ArtTechnologies-User/adtc-2026-submission-template.git
 ```
 
-3.	Run your Python script
-```bash
-python waec_tutor_gui.py
-or, if python doesn’t work:
-py waec_tutor_gui.py
+---
+
+## 💻 Executable
+The WAEC Tutor executable is too large for GitHub (over 2 GB).  
+It is hosted externally on Google Drive:
+
+👉 [Download waec_tutor_gui.exe](https://drive.google.com/file/d/1hb_KOu9tR6RN4Eu3EEHbocDAwb9cuJJA/view?usp=sharing)
+
+After downloading, place the file in the `dist/` folder:
+```
+dist/waec_tutor_gui.exe
 ```
 
+---
 
-To start the GUI:
-  ```bash
-  cd C:\Users\USER\waec_tutor
-  python waec_tutor_gui.py
- or py waec_tutor_gui.py
+## 🚀 Running the Tutor
+1. Clone this repo (with Git LFS enabled).
+2. Download the executable from the link above.
+3. Run the program:
+```bash
+dist/waec_tutor_gui.exe
+```
 
-  ```
-
+The tutor runs fully offline, providing WAEC exam practice and explanations without requiring internet access.
+```
 
 Rules:
 - Must be idempotent — safe to run multiple times without re-downloading.
