@@ -6,15 +6,17 @@
 #   - Must download without any credentials (public URL only).
 #   - The output path must match `_runtime.model_path` in metadata.json.
 
+#!/bin/bash
 set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MODEL_DIR="$HERE/model"
 MODEL_FILE="$MODEL_DIR/WAEC-Tutor-Q4_K_M.gguf"
 
-# ── Replace this URL with your public model weight URL ─────────────────────────
-MODEL_URL="https://huggingface.co/taiwo-waec-tutor/WAEC-Tutor-Q4_K_M/resolve/main/WAEC-Tutor-Q4_K_M.gguf"
-# ───────────────────────────────────────────────────────────────────────────────
+# ── Updated: Google Drive model weight URL ────────────────────────────────
+FILE_ID="1nN5lDd7BNarbkofKwAiYX8FLleGQV03J"
+MODEL_URL="https://drive.google.com/uc?export=download&id=$FILE_ID"
+# ─────────────────────────────────────────────────────────────────────────
 
 mkdir -p "$MODEL_DIR"
 
@@ -23,17 +25,21 @@ if [[ -f "$MODEL_FILE" ]]; then
   exit 0
 fi
 
-echo "downloading $MODEL_URL → $MODEL_FILE (~1.1 GB)…"
+echo "downloading $MODEL_URL → $MODEL_FILE (~2.8 GB)…"
 
-if command -v curl > /dev/null 2>&1; then
+if command -v gdown > /dev/null 2>&1; then
+  gdown --id "$FILE_ID" -O "$MODEL_FILE"
+elif command -v curl > /dev/null 2>&1; then
   curl -L --fail --progress-bar -o "$MODEL_FILE.partial" "$MODEL_URL"
+  mv "$MODEL_FILE.partial" "$MODEL_FILE"
 elif command -v wget > /dev/null 2>&1; then
   wget --show-progress -O "$MODEL_FILE.partial" "$MODEL_URL"
+  mv "$MODEL_FILE.partial" "$MODEL_FILE"
 else
-  echo "error: neither curl nor wget found" >&2
+  echo "error: neither gdown, curl, nor wget found" >&2
   exit 1
 fi
 
-mv "$MODEL_FILE.partial" "$MODEL_FILE"
-echo "done: $MODEL_FILE"
+echo "✅ done: $MODEL_FILE"
+
 
