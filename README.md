@@ -167,18 +167,18 @@ Recommended hosting options for your weights:
 WAEC Tutor addresses the challenge of exam preparation for West African students who often lack reliable internet access or cannot afford expensive devices. The target users are secondary school students in Nigeria and across West Africa preparing for WAEC exams. The tool provides offline tutoring, practice quizzes, and explanations in Mathematics, Biology, English, and other core subjects, helping bridge the digital divide in education.
 
 ## 2. Design Decisions
-- **Base model**: Started from LLaMA‑3.2 3B Instruct because it balances capability with feasibility on mid‑range laptops.  
-- **Quantization**: Used GGUF Q4_K_M quantization to reduce memory footprint while keeping answer quality acceptable.  
-- **Alternatives evaluated**:  
+- Base model: Started from LLaMA‑3.2 3B Instruct because it balances capability with feasibility on mid‑range laptops.  
+- Quantization: Used GGUF Q4_K_M quantization to reduce memory footprint while keeping answer quality acceptable.  
+- Alternatives evaluated:  
   - Q2_K and Q3_K quantizations (smaller, faster, but weaker accuracy).  
   - Larger models (7B+, 13B+) were tested but exceeded RAM limits on 8 GB laptops.  
-- **Final choice**: Q4_K_M offered the best trade‑off between speed, accuracy, and memory usage for the ADTC standard laptop.
+- Final choice: Q4_K_M offered the best trade‑off between speed, accuracy, and memory usage for the ADTC standard laptop.
 
 ## 3. Constraints
-- **Hardware**: Must run on ADTC standard laptops (Intel i5/Ryzen 5, 8 GB RAM, integrated graphics, 256 GB SSD).  
-- **Connectivity**: Designed for offline use — no internet required once the model is downloaded.  
-- **Data**: Limited storage and RAM shaped the choice of quantization and model size.  
-- **Accessibility**: Must remain affordable and usable in low‑resource school environments.  
+- Hardware: Must run on ADTC standard laptops (Intel i5/Ryzen 5, 8 GB RAM, integrated graphics, 256 GB SSD).  
+- Connectivity: Designed for offline use — no internet required once the model is downloaded.  
+- Data: Limited storage and RAM shaped the choice of quantization and model size.  
+- Accessibility: Must remain affordable and usable in low‑resource school environments.  
 
 ## 4. Benchmarks
 On a test machine (Intel Core i5‑1135G7, 8 GB RAM, Ubuntu 22.04):  
