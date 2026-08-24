@@ -182,7 +182,7 @@ WAEC Tutor addresses the challenge of exam preparation for West African students
 
 ## 4. Benchmarks
 On a test machine (Intel Core i5‑1135G7, 8 GB RAM, Ubuntu 22.04):  
-- Model load time: ~15 seconds  
+- Model load time: ~100 seconds  
 - Inference speed: ~12–15 tokens/sec for Q4_K_M  
 - Memory usage: ~4.5 GB RAM during inference  
 - Disk space: Model file size ~2.8 GB  
